@@ -12,12 +12,12 @@ jobs:
       #   uses: aabadie/action-install-python-requirements@v2.0.1
       - name: building the package
         run: |
-          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           python3 -m pip install build
           ls
           mkdir ../python-package
           cp -r dist/* ../rc-manage
-        working-directory: flask
+        working-directory: python-app
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:

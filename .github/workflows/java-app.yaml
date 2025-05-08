@@ -13,4 +13,4 @@ jobs:
             java-version: '17'
             distribution: 'oracle'
       - name: building the package
-        run: apt install mvn && mvn --version
+        run: apt install maven && mvn --version

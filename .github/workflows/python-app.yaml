@@ -8,10 +8,12 @@ jobs:
     steps:
       - name: Checkout the Code  #Checkout the code
         uses: actions/checkout@v4
-      - name: Install Python requirements
-        uses: aabadie/action-install-python-requirements@v2.0.1
+      # - name: Install Python requirements
+      #   uses: aabadie/action-install-python-requirements@v2.0.1
       - name: building the package
         run: |
+          sudo apt update
+          sudo apt install python3 -y
           python --version
           python -m build
           ls

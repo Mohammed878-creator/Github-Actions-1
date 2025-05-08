@@ -1,0 +1,25 @@
+name: python-application-workflow
+
+on: push
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Code  #Checkout the code
+        uses: actions/checkout@v4
+      - name: Install Python requirements
+        uses: aabadie/action-install-python-requirements@v2.0.1
+      - name: building the package
+        run: |
+          python --version
+          python -m build
+          ls
+          mkdir ../python-package
+          cp -r dist/* ../rc-manage
+        working-directory: java-app
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: package
+          path: rc-manage/

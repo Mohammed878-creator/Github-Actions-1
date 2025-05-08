@@ -21,8 +21,9 @@ jobs:
         run: |
           mvn --version
           mvn clean install
-          mkdir rc
-          cp -arp target/* rc
+          ls
+          mkdir ../rc-manage
+          cp -arp target/* ../rc-manage
         working-directory: java-app
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2

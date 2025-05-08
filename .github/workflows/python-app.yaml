@@ -17,7 +17,7 @@ jobs:
           ls
           mkdir ../python-package
           cp -r dist/* ../rc-manage
-        working-directory: python-app
+        working-directory: flask
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:

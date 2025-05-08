@@ -12,11 +12,8 @@ jobs:
       #   uses: aabadie/action-install-python-requirements@v2.0.1
       - name: building the package
         run: |
-          sudo apt update
-          sudo apt install python3 -y
-          pip install build
-          python --version
-          python -m build
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
           ls
           mkdir ../python-package
           cp -r dist/* ../rc-manage

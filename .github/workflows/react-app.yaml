@@ -13,10 +13,10 @@ jobs:
         with:
           node-version: '20.x'
       - name: Install in Dependencies
-        run: npm install
+        run: cd react-app && npm install
         working-directory: react-app/
       - name: build the application
-        run: npm run build
+        run: cd react-app && npm run build
         working-directory: react-app/
       - name: list the fils present in dist directory
         run: ls

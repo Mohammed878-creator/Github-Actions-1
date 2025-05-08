@@ -1,0 +1,16 @@
+name: java-application-workflow
+
+on: push
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout the Code  #Checkout the code
+        uses: actions/checkout@v4
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.14.1
+        with:
+            java-version: '17'
+            distribution: 'oracle'
+      - name: building the package
+        run: mvn --version

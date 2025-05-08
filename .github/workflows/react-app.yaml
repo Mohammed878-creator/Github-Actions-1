@@ -17,6 +17,7 @@ jobs:
          npm install
          npm run build
          ls
+         cd build && ls
         working-directory: react-app
       
         

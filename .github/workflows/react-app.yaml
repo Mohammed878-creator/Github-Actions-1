@@ -15,11 +15,9 @@ jobs:
       - name: Install in Dependencies
         run: |
          npm install
-         # npm run build
-         echo "+++++ started the files ++++++"
-         ls
-         echo "+++++ Ending Listing the files ++++"
-         #cd build && ls
+         npm run build
+         mkdir artifact
+         cp -f build artifact
         working-directory: react-app
       
         

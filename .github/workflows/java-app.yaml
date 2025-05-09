@@ -1,0 +1,35 @@
+name: java-application-workflow
+
+on: 
+  workflow_dispatch:
+    # branches:
+    #   - java-feature-app
+  
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout the Code  #Checkout the code
+        uses: actions/checkout@v4
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.14.1
+        with:
+            java-version: '17'
+            distribution: 'oracle'
+      - name: Setup Maven
+        uses: stCarolas/setup-maven@v5
+        with:
+           maven-version: '3.8.2'
+      - name: building the package
+        run: |
+          mvn --version
+          mvn clean install
+          ls
+          mkdir ../rc-manage
+          cp -r target/* ../rc-manage
+        working-directory: java-app
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: package
+          path: rc-manage/

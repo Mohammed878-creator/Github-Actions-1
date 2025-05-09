@@ -1,7 +1,6 @@
 name: java-application-workflow
 
 on: 
-  push:
   workflow_dispatch:
     # branches:
     #   - java-feature-app

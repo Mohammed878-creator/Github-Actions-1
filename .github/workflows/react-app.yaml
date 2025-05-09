@@ -1,6 +1,6 @@
 name: react-application-workflow  #workflow name
 
-on: workflow_dispatch
+on: push
 
 jobs:
   build:

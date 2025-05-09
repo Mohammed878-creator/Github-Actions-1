@@ -2,8 +2,8 @@ name: java-application-workflow
 
 on: 
   workflow_dispatch:
-    branches:
-      - java-feature-app
+    # branches:
+    #   - java-feature-app
   
 jobs:
   build:

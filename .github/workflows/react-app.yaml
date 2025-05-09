@@ -1,6 +1,9 @@
 name: react-application-workflow  #workflow name
 
-on: push
+on: 
+  push:
+    branches:
+      - react-feature-branch
 
 jobs:
   build:

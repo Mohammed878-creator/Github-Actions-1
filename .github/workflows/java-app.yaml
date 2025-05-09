@@ -4,7 +4,7 @@ on: workflow_dispatch
   
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest #self-hosted
     steps:
       - name: Checkout the Code  #Checkout the code
         uses: actions/checkout@v4
